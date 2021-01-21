@@ -8,8 +8,4 @@
   <ItemGroup>
     <PackageReference Include="Statiq.Web" Version="$(StatiqWebVersion)" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Trinsic.Blog.Tailwind\Trinsic.Blog.Tailwind.csproj" />
-  </ItemGroup>
 </Project>
