@@ -19,7 +19,7 @@ jobs:
         with:
           submodules: true
       - name: Setup npm
-      - uses: actions/setup-node@v2
+        uses: actions/setup-node@v2
         with:
           node-version: '12'
       - name: Build And Deploy
