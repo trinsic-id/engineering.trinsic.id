@@ -1,0 +1,19 @@
+@model IDocument
+
+@{
+    string excerpt = Model.GetString(Statiq.Html.HtmlKeys.Excerpt);
+}
+
+<div>
+    <h2 class="text-4xl font-bold">@Html.DocumentLink(Model)</h2>
+    @if(Model.ContainsKey("Lead"))
+    {
+        <div class="text-2xl font-light">@Model.GetString("Lead")</div>
+    }
+    <p class="text-xl font-light italic">Published on @Model.GetDateTime(WebKeys.Published).ToLongDateString()</p>                
+    @if (!string.IsNullOrEmpty(excerpt))
+    {
+        @Html.Raw(excerpt)
+        <p class=""><a href="@Context.GetLink(Model)">Read more...</a></p>
+    }
+</div>

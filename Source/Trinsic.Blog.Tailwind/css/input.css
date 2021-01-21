@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .logo {
+    background-image: url("/Images/trinsic-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 10%;
+    height: 2rem;
+  }
+}
