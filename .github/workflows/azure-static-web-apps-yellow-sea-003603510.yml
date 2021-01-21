@@ -25,6 +25,14 @@ jobs:
           node-version: '12'
       - run: cd "./Source/Trinsic.Blog.Tailwind" && npm install && npm run tailwinds
 
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.x' # SDK Version to use.
+      - name: Build
+        run: dotnet run --configuration Release
+        env:
+          AzureMapsSubscriptionKey: ${{ secrets.AzureMapsSubscriptionKey }}
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
