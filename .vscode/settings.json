@@ -1,5 +1,5 @@
 {
     "staticWebApps.appSubpath": "/",
     "staticWebApps.apiSubpath": "",
-    "staticWebApps.outputSubpath": "Source/output"
+    "staticWebApps.outputSubpath": "Source/Trinsic.Blog/output"
 }
