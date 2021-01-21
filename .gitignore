@@ -204,6 +204,10 @@ csx/
 ecf/
 rcf/
 
+# Rider
+
+.idea
+
 # Windows Store app package directories and files
 AppPackages/
 BundleArtifacts/
