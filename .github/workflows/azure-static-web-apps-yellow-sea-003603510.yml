@@ -15,9 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true
+      - uses: actions/checkout@v1
 
       - name: Setup npm
         uses: actions/setup-node@v2
@@ -30,14 +28,9 @@ jobs:
           dotnet-version: '5.0.x' # SDK Version to use.
 
       - name: Build
-        run: dotnet run --project ./Source/Trinsic.Blog/Trinsic.Blog.csproj --configuration Release
+        run: dotnet run --project ./Source/Trinsic.Blog/Trinsic.Blog.csproj --configuration Debug
         env:
           AzureMapsSubscriptionKey: ${{ secrets.AzureMapsSubscriptionKey }}
-      
-      - name: Sleep for 30 seconds
-        uses: jakejarvis/wait-action@master
-        with:
-          time: '30s'
           
       - name: List directories
         run: ls -LR
