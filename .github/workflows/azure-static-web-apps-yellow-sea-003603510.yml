@@ -33,6 +33,10 @@ jobs:
         env:
           AzureMapsSubscriptionKey: ${{ secrets.AzureMapsSubscriptionKey }}
 
+      - name: Display the current directory
+        run: ls
+        shell: bash
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
