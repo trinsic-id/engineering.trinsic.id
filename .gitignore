@@ -354,5 +354,5 @@ MigrationBackup/
 .ionide/
 # /Source/Trinsic.Blog/output/
 
-# Ignoring Site.css
-/Source/Trinsic.Blog/theme/input/css/Site.css
+# Ignoring site.css
+/Source/Trinsic.Blog/theme/input/css/site.css
