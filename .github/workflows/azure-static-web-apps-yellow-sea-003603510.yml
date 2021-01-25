@@ -33,7 +33,12 @@ jobs:
         run: dotnet run --project ./Source/Trinsic.Blog/Trinsic.Blog.csproj --configuration Release
         env:
           AzureMapsSubscriptionKey: ${{ secrets.AzureMapsSubscriptionKey }}
-
+      
+      - name: Sleep for 30 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '30s'
+          
       - name: List directories
         run: ls -LR
         shell: bash
