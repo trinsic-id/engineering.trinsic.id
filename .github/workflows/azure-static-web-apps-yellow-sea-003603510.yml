@@ -33,7 +33,7 @@ jobs:
           AzureMapsSubscriptionKey: ${{ secrets.AzureMapsSubscriptionKey }}
 
       - name: List
-        run: ls ./Source/Trinsic.Blog/output
+        run: ls ./Source/Trinsic.Blog/theme/input/css
         shell: bash
 
       - name: Build And Deploy
