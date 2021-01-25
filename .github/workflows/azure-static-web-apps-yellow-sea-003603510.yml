@@ -36,6 +36,10 @@ jobs:
         run: ls ./Source/Trinsic.Blog/theme/input/css
         shell: bash
 
+        - name: List
+        run: ls ./Source/Trinsic.Blog/output/css
+        shell: bash
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
