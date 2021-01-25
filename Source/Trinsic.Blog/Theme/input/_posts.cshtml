@@ -1,7 +1,0 @@
-@model IDocument
-
-@foreach (IDocument post in Model.GetChildren())
-{
-    @Html.Partial("/_post.cshtml", post)
-    <hr class="my-3"/>
-}
