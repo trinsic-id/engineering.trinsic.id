@@ -32,6 +32,10 @@ jobs:
         env:
           AzureMapsSubscriptionKey: ${{ secrets.AzureMapsSubscriptionKey }}
 
+      - name: List
+        run: ls ./Source/Trinsic.Blog/output
+        shell: bash
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
