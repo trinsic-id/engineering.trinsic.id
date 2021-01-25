@@ -33,7 +33,7 @@ jobs:
           AzureMapsSubscriptionKey: ${{ secrets.AzureMapsSubscriptionKey }}
           
       - name: List directories
-        run: ls -LR
+        run: ls -LR ../
         shell: bash
 
       - name: Build And Deploy
