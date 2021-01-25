@@ -15,12 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
         with:
           submodules: true
 
       - name: Setup npm
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v1
         with:
           node-version: '12'
       - run: cd "./Source/Trinsic.Blog.Tailwind" && npm install && npm run tailwinds
