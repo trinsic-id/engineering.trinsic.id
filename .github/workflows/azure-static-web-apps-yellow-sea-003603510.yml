@@ -15,15 +15,23 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
         with:
           submodules: true
 
+      - name: List directories
+        run: ls -LR
+        shell: bash
+
       - name: Setup npm
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: '12'
       - run: cd "./Source/Trinsic.Blog.Tailwind" && npm install && npm run tailwinds
+
+      - name: List directories
+        run: ls -LR
+        shell: bash
 
       - uses: actions/setup-dotnet@v1
         with:
