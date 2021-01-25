@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <title>@Document.GetString("PageTitle")</title>
+    <link href="~/css/Site.css" rel="stylesheet" type="text/css">
+</head>
+    @{
+        bool isPostType = Document.GetBool("IsPost");
+    }
+    <body>
+        <!-- Navigation -->
+        @RenderSectionOrPartial("Navigation", "_navigation")
+
+        <!-- Page Header -->
+        @RenderSectionOrPartial("Header", "_header")
+
+        <!-- Main Content -->
+        <div id="content" class="w-full">
+            @if (!isPostType)
+            {
+                @RenderBody()
+            }
+            @if (isPostType)
+            {
+                <div class="w-full p-10 text-xl text-gray-800 grid justify-center" style="font-family:Georgia,serif;">
+                    @RenderBody()
+                </div>
+            }
+        </div>
+    </body>
+</html>

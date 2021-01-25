@@ -1,0 +1,46 @@
+@{
+    string backgroundImage = null;
+    if (Document.ContainsKey(WebKeys.Image))
+    {
+        backgroundImage = $"background-image: url(\"{Context.GetLink(Document.GetString(WebKeys.Image))}\")";
+    }
+    string description = Document.WithoutSettings().GetString("Lead") ?? Document.WithoutSettings().GetString(WebKeys.Description);
+    string title = Document.GetString("Title");
+    title = String.IsNullOrEmpty(title) ? Document.GetString("SiteTitle") : title;
+    bool isPost = Document.GetBool("IsPost") && title != "Tags" && title != "Archive";
+    string headerClass = "h-80 w-screen flex bg-secondary bg-contain bg-no-repeat";
+    headerClass = isPost ? headerClass + " bg-center" : headerClass;
+}
+<header class="@headerClass" style="@backgroundImage">
+    <div class="m-auto text-white">
+        <div class="text-center">
+            <h1 class="text-4xl">
+                  @title
+                @if (Document.GetInt(Keys.Index) > 1)
+                {
+                    <small>(Page @Document.GetString(Keys.Index))</small>
+                }
+            </h1>
+            @if (!string.IsNullOrEmpty(description))
+            {
+                <h2 class="text-white">@description</h2>
+            }
+            @if (isPost)
+            {
+                <div class="italic">Published on @Document.GetDateTime(WebKeys.Published).ToLongDateString()</div>
+                @if (Document.ContainsKey("Tags"))
+                {
+                    <div class="mt-3">
+                        @foreach (IDocument tag in Document.GetList<string>("Tags")
+                            .Select(x => Outputs["tags.html"].First().GetChildren().FirstOrDefault(y => y.GetTitle().Equals(x, StringComparison.OrdinalIgnoreCase)))
+                            .Where(x => x != null))
+                        {
+                            <a href="@Context.GetLink(tag)" class="badge badge-light"> @tag.GetTitle()</a>
+                        }
+                    </div>
+                }
+            }
+        </div>
+    </div>
+ 
+</header>
