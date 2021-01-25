@@ -27,10 +27,10 @@ jobs:
         with:
           dotnet-version: '5.0.x' # SDK Version to use.
 
-      # - name: Build
-      #   run: dotnet run --project ./Source/Trinsic.Blog/Trinsic.Blog.csproj --configuration Debug
-      #   env:
-      #     AzureMapsSubscriptionKey: ${{ secrets.AzureMapsSubscriptionKey }}
+      - name: Build
+        run: dotnet run --project ./Source/Trinsic.Blog/Trinsic.Blog.csproj --configuration Debug
+        env:
+          AzureMapsSubscriptionKey: ${{ secrets.AzureMapsSubscriptionKey }}
 
       - name: Build And Deploy
         id: builddeploy
