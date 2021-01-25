@@ -28,13 +28,14 @@ jobs:
       - uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '5.0.x' # SDK Version to use.
+
       - name: Build
         run: dotnet run --project ./Source/Trinsic.Blog/Trinsic.Blog.csproj --configuration Release
         env:
           AzureMapsSubscriptionKey: ${{ secrets.AzureMapsSubscriptionKey }}
 
-      - name: Display the current directory
-        run: ls ./Source/Trinsic.Blog/output
+      - name: List directories
+        run: ls -LR
         shell: bash
 
       - name: Build And Deploy
