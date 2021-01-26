@@ -352,7 +352,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
-# /Source/Trinsic.Blog/output/
 
-# Ignoring site.css
+# Ignore the Statiq generated outputs
+/Source/Trinsic.Blog/output/
+
+# Ignoring the tailwind generated output site.css. This is the input to Statiq.
 /Source/Trinsic.Blog/theme/input/css/site.css
