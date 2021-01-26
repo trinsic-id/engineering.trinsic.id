@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    
     <title>@Document.GetString("PageTitle")</title>
     <link href="~/css/site.css" rel="stylesheet" type="text/css">
 </head>
@@ -24,7 +23,7 @@
             }
             @if (isPostType)
             {
-                <div class="w-full p-10 text-xl text-gray-800 grid justify-center" style="font-family:Georgia,serif;">
+                <div class="grid justify-center w-full p-10 text-xl text-gray-800" style="font-family:Georgia,serif;">
                     @RenderBody()
                 </div>
             }
