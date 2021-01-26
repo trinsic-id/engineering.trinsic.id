@@ -11,7 +11,8 @@
     string headerClass = "h-80 w-screen flex bg-secondary bg-contain bg-no-repeat";
     headerClass = isPost ? headerClass + " bg-center" : headerClass;
 }
-<header class="@headerClass" style="@backgroundImage">
+@if(@isPost) {
+    <header class="@headerClass" style="@backgroundImage">
     <div class="m-auto text-white">
         <div class="text-center">
             <h1 class="text-4xl">
@@ -42,5 +43,18 @@
             }
         </div>
     </div>
- 
 </header>
+}
+else {
+    <header class="@headerClass" style="@backgroundImage">
+        <div class="text-white flex-col w-1/4 ml-24 my-auto">
+            <h1 class="text-6xl mb-5 font-bold">
+                @title
+            </h1>
+            @if (!string.IsNullOrEmpty(description))
+            {
+                <h2 class="text-white">@description</h2>
+            }
+        </div>
+    </header>
+}

@@ -18,7 +18,7 @@ module.exports = {
       purple: colors.violet,
       pink: colors.pink,
       primary: "#006BE5",
-      secondary: "#3B4358",
+      secondary: "#20262D",
     },
     extend: {},
   },

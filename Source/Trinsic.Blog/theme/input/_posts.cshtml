@@ -1,7 +1,16 @@
 @model IDocument
 
-@foreach (IDocument post in Model.GetChildren())
+
+
+@if (Model.GetChildren().Any())
 {
-    @Html.Partial("/_post.cshtml", post)
-    <hr class="my-3"/>
+  var first = Model.GetChildren().First();
+  @Html.Partial("/_singlePost.cshtml", first)
+}
+
+@foreach (IDocument post in Model.GetChildren().Skip(1))
+{
+    <div class="flex my-14 mx-auto">
+        @Html.Partial("/_post.cshtml", post)
+    </div>
 }
