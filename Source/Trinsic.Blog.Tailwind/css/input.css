@@ -4,7 +4,7 @@
 
 @layer base {
   .logo {
-    background-image: url("/Images/trinsic-logo.png");
+    background-image: url("/images/trinsic-logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     width: 10%;
