@@ -4,12 +4,12 @@
     {
         backgroundImage = $"background-image: url(\"{Context.GetLink(Document.GetString(WebKeys.Image))}\")";
     }
+
     string description = Document.WithoutSettings().GetString("Lead") ?? Document.WithoutSettings().GetString(WebKeys.Description);
     string title = Document.GetString("Title");
     title = String.IsNullOrEmpty(title) ? Document.GetString("SiteTitle") : title;
     bool isPost = Document.GetBool("IsPost") && title != "Tags" && title != "Archive";
-    string headerClass = "h-80 w-screen flex bg-secondary bg-contain bg-no-repeat bg-";
-    headerClass = isPost ? headerClass + " bg-center" : headerClass;
+    string headerClass = "h-80 w-screen flex bg-secondary bg-contain bg-no-repeat bg-center";
 }
 @if(@isPost) {
     <div class="flex-column my-8 mx-24 text-secondary">
