@@ -11,4 +11,106 @@
     width: 10%;
     height: 2rem;
   }
+
+  #postType > ul {
+    @apply list-disc;
+    @apply pl-6;
+    @apply mb-10;
+    @apply text-xl;
+    @apply mx-24
+  }
+
+  #postType h1 {
+    @apply font-bold;
+    @apply text-4xl;
+    @apply mb-2;
+    @apply mx-24
+  }
+
+  #postType h2 {
+    @apply font-bold;
+    @apply text-3xl;
+    @apply mb-2;
+    @apply mx-24
+  }
+
+  #postType h3 {
+    @apply font-bold;
+    @apply text-2xl;
+    @apply mb-2;
+    @apply mx-24;
+  }
+
+  #postType h4 {
+    @apply font-bold;
+    @apply text-2xl;
+    @apply mb-2;
+    @apply mx-24;
+  }
+
+  #postType  p {
+    @apply text-xl;
+    @apply my-3;
+    @apply mx-24;
+  }
+
+  #postType blockquote {
+    @apply border-l-4;
+    @apply border-blue-600;
+    @apply bg-gray-50;
+    @apply my-3;
+    @apply p-6;
+    @apply pb-2;
+    @apply italic;
+    @apply mx-24;
+  }
+
+  #postType .hljs {
+    display: block;
+    overflow-x: auto;
+    @apply p-4;
+    @apply pl-6;
+    color: #4a4a4a;
+    background: #f7f7f7;
+    @apply text-sm;
+    @apply my-3;
+  }
+
+  #postType code {
+    @apply bg-gray-100;
+    @apply py-1;
+    @apply px-2;
+    @apply rounded;
+    @apply text-sm;
+  }
+
+  #postType pre {
+    @apply mx-24;
+  }
+
+  #postType a > {
+    @apply text-blue-600;
+  }
+
+  #postType a:hover > {
+    @apply text-blue-400;
+  }
+
+  #postType table {
+    @apply mx-24;
+  }
+
+  .tooltip .tooltip-text {
+    @apply opacity-0;
+    @apply transition;
+    @apply duration-500;
+    @apply text-center;
+    padding: 2px 6px;
+    position: absolute;
+    z-index: 100;
+  }
+
+  .tooltip:hover .tooltip-text {
+    @apply opacity-100;
+  }
 }
