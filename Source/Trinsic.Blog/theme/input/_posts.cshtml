@@ -1,16 +1,17 @@
 @model IDocument
-
-
-
-@if (Model.GetChildren().Any())
-{
-  var first = Model.GetChildren().First();
-  @Html.Partial("/_singlePost.cshtml", first)
+@{
+    IOrderedEnumerable<Statiq.Common.IDocument> posts = Model.GetChildren().OrderByDescending(x => x.GetDateTime(WebKeys.Published).Year);
+                  
 }
 
-<div class="flex mx-auto my-14">
-  @foreach (IDocument post in Model.GetChildren().Skip(1))
+@if (posts.Any())
+{
+  var first = posts.First();
+  @Html.Partial("/_singlePost.cshtml", first)
+}
+<div class="flex my-14 mx-auto">
+  @foreach (IDocument post in posts.Skip(1))
   {
-    @Html.Partial("/_post.cshtml", post)
+          @Html.Partial("/_post.cshtml", post)
   }
 </div>
