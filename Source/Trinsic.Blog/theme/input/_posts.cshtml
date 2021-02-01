@@ -8,9 +8,9 @@
   @Html.Partial("/_singlePost.cshtml", first)
 }
 
-@foreach (IDocument post in Model.GetChildren().Skip(1))
-{
-    <div class="flex my-14 mx-auto">
-        @Html.Partial("/_post.cshtml", post)
-    </div>
-}
+<div class="flex mx-auto my-14">
+  @foreach (IDocument post in Model.GetChildren().Skip(1))
+  {
+    @Html.Partial("/_post.cshtml", post)
+  }
+</div>
