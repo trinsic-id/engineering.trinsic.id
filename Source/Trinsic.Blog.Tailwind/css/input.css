@@ -88,11 +88,11 @@
     @apply mx-24;
   }
 
-  #postType a > {
+  #postType a {
     @apply text-blue-600;
   }
 
-  #postType a:hover > {
+  #postType a:hover {
     @apply text-blue-400;
   }
 
