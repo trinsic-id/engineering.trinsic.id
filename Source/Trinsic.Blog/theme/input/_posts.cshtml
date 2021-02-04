@@ -9,7 +9,7 @@
   var first = posts.First();
   @Html.Partial("/_singlePost.cshtml", first)
 }
-<div class="flex my-14 mx-auto">
+<div class="flex flex-wrap my-14 mx-auto">
   @foreach (IDocument post in posts.Skip(1))
   {
           @Html.Partial("/_post.cshtml", post)

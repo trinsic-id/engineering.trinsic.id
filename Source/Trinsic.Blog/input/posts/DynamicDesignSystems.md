@@ -1,6 +1,6 @@
 Title: Dynamic Design Systems
 Published: 01/28/2020
-Image: ../images/dynamicdesignsystems/coverphoto.jpeg
+Image: /images/dynamicdesignsystems/coverphoto.jpeg
 Author: Josh Welty
 Description: Building dynamic design systems to be used across a variety of use cases
 Excerpt: Building dynamic design systems to be used across a variety of use cases
