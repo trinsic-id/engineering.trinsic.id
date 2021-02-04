@@ -23,7 +23,7 @@
         <div class="italic">Published on @Document.GetDateTime(WebKeys.Published).ToLongDateString()</div>
         @if (!string.IsNullOrEmpty(description))
         {
-            <h2 class="text-white">@description</h2>
+            <h2 class="text-secondary">@description</h2>
         }
         @if (Document.ContainsKey("Tags"))
         {
