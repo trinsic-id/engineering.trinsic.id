@@ -26,7 +26,7 @@
     @if (Document.ContainsKey(WebKeys.Image))
     {
         string image = @Context.GetLink(Document.GetString(WebKeys.Image));
-        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:card" content="@image"/>
         <meta property="og:image" content="@image" />
         <meta property="og:image:url"  content="@image"  />
         <meta property="twitter:image" content="@image"/>
