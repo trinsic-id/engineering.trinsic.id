@@ -26,6 +26,8 @@
     @if (Document.ContainsKey(WebKeys.Image))
     {
         string image = @Context.GetLink(Document.GetString(WebKeys.Image));
+        string siteUrl = "https://engineering.trinsic.id";
+        image = image.Contains("http") ? image : siteUrl + image;
         <meta name="twitter:card" content="summary_large_image"/>
         <meta property="og:image" content="@image" />
         <meta property="og:image:url"  content="@image"  />
